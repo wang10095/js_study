@@ -1,14 +1,13 @@
 		ssh免输入密码登陆或上传   192.168.1.121是服务器地址(以此为例子) 
 
 首先打开自己机子的终端
-mkdir ~/.ssh
-cd ~/.ssh
+cd ~ 
+cd .ssh
 ssh-keygen -t rsa   遇到提示回车就可 遇到输入密码就输入密码
 
-登陆服务器     ssh root@192.168.1.121   回车输入密码
-在服务器 ~/.ssh 下创建authorized_keys 文件  并将自己机子中的 ~/.ssh/is_rsa.pub 中的内容拷贝到authorized_keys 文件中
-在自己的机子和服务器之间建立信任 
-scp ~/.ssh/id_rsa.pub root@192.168.1.121:/root/.ssh/authorized_keys
+登陆服务器   ps:  ssh root@192.168.1.121  
+在服务器 ~/.ssh 下创建authorized_keys 文件  并将自己机子中的 ~/.ssh/is_rsa.pub 中的内容追加到authorized_keys 文件中
+
 测试    ssh root@192.168.1.121
 
 
